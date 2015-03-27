@@ -7,7 +7,7 @@
 function createNote($title, $content) {
 
     try {
-        $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+        $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
        // $connection->exec('SET search_path TO public');
         $query = $connection->prepare("INSERT INTO notes (content, title) VALUES (:content, :title);");
         $query->bindParam(':content', $content);
@@ -24,7 +24,7 @@ function createNote($title, $content) {
  */
 function getNotes() {
     try {
-        $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+        $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
         //$connection->exec('SET search_path TO public');
 
         $query = $connection->prepare("SELECT * FROM notes ORDER BY last_modified DESC;");
@@ -40,7 +40,7 @@ function getNotes() {
  */
 function getMinId() {
     try {
-        $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+        $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
         //$connection->exec('SET search_path TO public');
 
         $query = $connection->prepare("SELECT min(id) FROM notes;");
@@ -56,7 +56,7 @@ function getMinId() {
  */
 function getMaxId() {
     try {
-        $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+        $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
         //$connection->exec('SET search_path TO public');
 
         $query = $connection->prepare("SELECT max(id) FROM notes;");
@@ -73,7 +73,7 @@ function getMaxId() {
  */
 function isValid($id) {
     try {
-        $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+        $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
         //$connection->exec('SET search_path TO public');
 
         $query = $connection->prepare("SELECT * FROM notes WHERE id = :id;");
@@ -92,7 +92,7 @@ function isValid($id) {
 
 function deleteNote($id) {
     try {
-       $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+       $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
         //$connection->exec('SET search_path TO public');
 
         $query = $connection->prepare("DELETE FROM notes WHERE id = :id;");
@@ -108,7 +108,7 @@ function deleteNote($id) {
  */
 function updateNote($id, $newTitle, $newContent) {
     try {
-      $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+      $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
         //$connection->exec('SET search_path TO public');
 
         $query = $connection->prepare("UPDATE notes
@@ -130,7 +130,7 @@ function updateNote($id, $newTitle, $newContent) {
  */
 function fetchPdfData(){
         try {
-        $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+        $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
         //$connection->exec('SET search_path TO public');
 
         $query = $connection->prepare("SELECT * FROM notes;");
@@ -149,7 +149,7 @@ function fetchPdfData(){
  */
 function getNote($id){
         try {
-       $connection = new PDO('mysql:host=127.0.0.1;port=3306;dbname=minotes', "minotes", "minotes");
+       $connection = new PDO('mysql:host=isedbserver.cloudapp.net;port=3306;dbname=user3', "user3", "iop123!");
         //$connection->exec('SET search_path TO public');
 
         $query = $connection->prepare("SELECT * FROM notes WHERE id = :id;");
